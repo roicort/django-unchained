@@ -1,0 +1,4 @@
+{
+  "project_slug": "django-unchained",
+  "project_name": "{{ cookiecutter.project_slug}}"
+}
