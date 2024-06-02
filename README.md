@@ -62,3 +62,17 @@ The query between server action and Django backend is handled by using an API cl
 ### Swagger
 
 By default, Turbo includes Swagger for API schema which is available here `http://localhost:8000/api/schema/swagger-ui/`. Swagger can be disabled by editing `urls.py` and removing `SpectacularSwaggerView`.
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+## ⭐️ Support
+
+Give a ⭐️ if you liked this project 
+
+## License
+
+The MIT License
+
+### This project aims to be an extention of the idea by [Turbo](https://github.com/unfoldadmin/turbo)
