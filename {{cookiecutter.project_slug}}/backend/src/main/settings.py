@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     "drf_spectacular",
     # Auth
     "account",
-    "oauth2_provider",
+    "oidc_provider",
     # Main
     "main",
 ]
@@ -126,6 +126,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_URL = '/accounts/login/'
+
 ######################################################################
 # Internationalization
 ######################################################################
@@ -158,7 +160,6 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated",
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        "oauth2_provider.contrib.rest_framework.OAuth2Authentication",
         "rest_framework.authentication.SessionAuthentication",
     ],
 }

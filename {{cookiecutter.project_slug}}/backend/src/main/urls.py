@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.urls import include, path
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
-from oauth2_provider import urls as oauth2_urls
 from api import urls as api_urls
 
 urlpatterns = [
@@ -13,6 +12,6 @@ urlpatterns = [
     path("api/", include(api_urls)),
     # Admin
     path("dashboard/", admin.site.urls),
-    # OAuth2
-    path('o/', include(oauth2_urls)),
+    # OIDC
+    path('oidc/', include('oidc_provider.urls', namespace='oidc_provider')),
 ]

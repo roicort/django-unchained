@@ -40,7 +40,7 @@ services:
   web-nuxt:
     build:
       context: frontend-nuxt
-    command: ["bun", "run", "dev"]
+    command: ["bun", "run", "dev", "--host"]
     expose:
       - "3000"
     ports:
