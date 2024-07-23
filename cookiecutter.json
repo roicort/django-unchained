@@ -1,4 +1,9 @@
 {
   "project_slug": "django-unchained",
-  "project_name": "{{ cookiecutter.project_slug}}"
+  "project_name": "{{cookiecutter.project_slug}}",
+  "_copy_without_render": [
+    "frontend-nuxt/*",
+    "frontend-nuxt/src/app.vue",
+    "backend/*.html"
+  ]
 }
