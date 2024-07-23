@@ -25,8 +25,8 @@ services:
       - "8000"
     ports:
       - "8000:8000"
-    volumes:
-      - backend:/app
+    #volumes:
+    #  - backend:/app
     env_file:
       - .env
     healthcheck:
@@ -40,13 +40,13 @@ services:
   web-nuxt:
     build:
       context: frontend-nuxt
-    command: ["bun", "run", "dev", "--host"]
+    command: ["pnpm", "run", "dev", "-o", "--host"]
     expose:
       - "3000"
     ports:
       - "3000:3000"
-    volumes:
-      - frontend-nuxt:/app
+    #volumes:
+    #  - frontend-nuxt:/app
     env_file:
       - .env.frontend
     healthcheck:
@@ -59,6 +59,6 @@ services:
         condition: service_healthy
 
 volumes:
-  backend:
+  #backend:
   db:
-  frontend-nuxt:
+  #frontend-nuxt:
