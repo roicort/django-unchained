@@ -126,7 +126,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_URL = '/accounts/login/'
+LOGIN_URL = '/account/login/'
 
 ######################################################################
 # Internationalization

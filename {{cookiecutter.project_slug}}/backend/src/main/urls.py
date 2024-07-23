@@ -14,4 +14,6 @@ urlpatterns = [
     path("dashboard/", admin.site.urls),
     # OIDC
     path('oidc/', include('oidc_provider.urls', namespace='oidc_provider')),
-]
+    # Accounts
+    path("account/", include("account.urls")),
+    ]

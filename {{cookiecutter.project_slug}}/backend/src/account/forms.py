@@ -8,7 +8,7 @@ from .models import User
 class UserCreationForm(BaseUserCreationForm):
     class Meta:
         model = User
-        fields = ('email', 'password1', 'password2')  # Añade 'email' aquí
+        fields = ('email', 'password1', 'password2')
 
 class UserChangeForm(BaseUserChangeForm):
     class Meta:
