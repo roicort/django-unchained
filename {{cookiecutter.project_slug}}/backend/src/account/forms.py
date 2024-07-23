@@ -8,12 +8,12 @@ from .models import User
 class UserCreationForm(BaseUserCreationForm):
     class Meta:
         model = User
-        fields = ('email', 'password1', 'password2')
+        fields = ('email', 'password1', 'password2', 'first_name', 'last_name')
 
 class UserChangeForm(BaseUserChangeForm):
     class Meta:
         model = User
-        fields = "__all__"
+        fields = ('email', 'first_name', 'last_name')
 
 class AdminPasswordChangeForm(BaseAdminPasswordChangeForm):
     class Meta:

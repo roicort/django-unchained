@@ -10,6 +10,8 @@ class UserSignUp(View):
     def post(self, request, *args, **kwargs):
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            # Lógica para manejar un formulario válido, como crear un usuario
+            user = form.save()
+            user.is_active = True
+            user.save()
             return redirect('account:login')
         return render(request, 'registration/signup.html', {'form': form})
