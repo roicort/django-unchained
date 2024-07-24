@@ -1,10 +1,11 @@
 import secrets
 import base64
+import random
 
 project_slug = "{{ cookiecutter.project_slug }}"
 
-oidc_client_id=secrets.token_urlsafe(32)
-oidc_client_secret=secrets.token_urlsafe(32)
+oidc_client_id=random.randint(100000, 999999)
+oidc_client_secret = secrets.token_hex(32)
 
 env_back_variables = {
 
