@@ -17,7 +17,7 @@ services:
       interval: 2s
       timeout: 2s
       retries: 10
-  api:
+  backend:
     build:
       context: backend
     command: [ "poetry", "run", "gunicorn", "--bind", ":8000", "main.wsgi:application", "--timeout", "0", "--workers", "4", ]
@@ -37,16 +37,16 @@ services:
     depends_on:
       db:
         condition: service_healthy
-  web-nuxt:
+  frontend:
     build:
-      context: frontend-nuxt
-    command: ["pnpm", "run", "dev", "-o", "--host"]
+      context: frontend-{{cookiecutter.frontend}}
+    command: ["pnpm", "run", "dev"]
     expose:
       - "3000"
     ports:
       - "3000:3000"
     #volumes:
-    #  - frontend-nuxt:/app
+    #  - frontend-{{cookiecutter.frontend}}:/app
     env_file:
       - .env.frontend
     healthcheck:
@@ -55,10 +55,10 @@ services:
       timeout: 2s
       retries: 10
     depends_on:
-      api:
+      backend:
         condition: service_healthy
 
 volumes:
   #backend:
   db:
-  #frontend-nuxt:
+  frontend-{{cookiecutter.frontend}}:
