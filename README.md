@@ -22,9 +22,10 @@ The main problem I encountered while decoupling Django was the authentication, w
     * [x] OIDC Provider Config
     * [x] Unfold Admin
     * [x] OpenAPI
+    * [] OIDC Templates
 * [ ] Nuxt frontend
-    * [] Dockerfile
-    * [] Auth.js
+    * [x] Dockerfile
+    * [x] Auth.js
 * [ ] Next frontend
     * [x] Dockerfile
     * [] Auth.js
@@ -64,7 +65,7 @@ Then, open the browser and navigate to `http://localhost:3000` to see the front 
 For dependency management in Django application we are using Poetry. When starting the project through the docker-compose command, it is checked for new dependencies as well. In the case they are not installed, docker will install them before running development server.
 
 - **[djangorestframework](https://github.com/encode/django-rest-framework)** - REST API support
-- **[djangorestframework-simplejwt](https://github.com/jazzband/djangorestframework-simplejwt)** - JWT auth for REST API
+- **[django-oidc-provider]()** - OIDC Provider
 - **[drf-spectacular](https://github.com/tfranzel/drf-spectacular)** - OpenAPI schema generator
 - **[django-unfold](https://github.com/unfoldadmin/django-unfold)** - Admin theme for Django admin panel
 
