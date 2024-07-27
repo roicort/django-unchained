@@ -22,13 +22,13 @@ The main problem I encountered while decoupling Django was the authentication, w
     * [x] OIDC Provider Config
     * [x] Unfold Admin
     * [x] OpenAPI
-    * [] OIDC Templates
+    * [ ] OIDC Templates
 * [ ] Nuxt frontend
     * [x] Dockerfile
     * [x] Auth.js
 * [ ] Next frontend
     * [x] Dockerfile
-    * [] Auth.js
+    * [ ] Auth.js
 
 ### Features
 
