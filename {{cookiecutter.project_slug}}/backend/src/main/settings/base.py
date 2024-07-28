@@ -128,6 +128,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LOGIN_URL = '/account/login/'
 
+OIDC_USERINFO = 'main.settings.oidc.userinfo'
+
+#OIDC_EXTRA_SCOPE_CLAIMS = 'main.settings.oidc.CustomScopeClaims'
+
 ######################################################################
 # Internationalization
 ######################################################################
