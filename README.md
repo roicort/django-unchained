@@ -1,5 +1,5 @@
-# django-unchained
-Easy decoupled Django projects with OIDC Auth. ⚠️⚠️ Django unchained is currently under development ⚠️⚠️
+# Django Unchained ⛓️‍💥
+Easy decoupled Django projects with OIDC Auth. ⚠️⚠️ Currently under development ⚠️⚠️
 
 ### What?
 
