@@ -8,12 +8,12 @@ export const { handlers, auth, signIn } = NextAuth({
     type: "oidc",
     clientId: process.env.OIDC_CLIENT_ID, // from the provider's dashboard
     clientSecret: process.env.OIDC_CLIENT_SECRET, // from the provider's dashboard
-    wellKnown: "http://localhost:8000/oidc/.well-known/openid-configuration/",
-    authorization: "http://localhost:8000/oidc/authorize",
-    token: "http://localhost:8000/oidc/token",
-    userinfo: "http://localhost:8000/oidc/userinfo",
-    jwks_endpoint: "http://localhost:8000/oidc/jwks",
-    issuer: "http://localhost:8000/oidc",
+    wellKnown: "http://backend:8000/oidc/.well-known/openid-configuration/",
+    authorization: "http://backend:8000/oidc/authorize",
+    token: "http://backend:8000/oidc/token",
+    userinfo: "http://backend:8000/oidc/userinfo",
+    jwks_endpoint: "http://backend:8000/oidc/jwks",
+    issuer: "http://backend:8000/oidc",
   } satisfies OIDCConfig],
   callbacks: {
     jwt({ token, user, account, profile }) {
