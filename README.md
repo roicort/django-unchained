@@ -41,6 +41,10 @@ The main problem I encountered while decoupling Django was the authentication, w
 - **OIDC Auth**: Pre-configured OIDC Auth with Django as Provider and Frontend-[Nuxt/Next] as RP (Client)
 - **Admin Theme**: Unfold admin theme with user & group management
 
+
+![](https://github.com/user-attachments/assets/2ff0d3ff-dfdf-4dab-ad54-c9e6131e9788)
+
+
 ## Quickstart
 
 To start using django-unchained, it is needed to create a cookiecutter project from the template. After the project is created, it is possible to start the project by running docker-compose command.
