@@ -1,10 +1,11 @@
 # Django Unchained ⛓️‍💥
+
 Easy decoupled Django projects with OIDC Auth. ⚠️⚠️ Currently under development ⚠️⚠️
 
 ### What?
 
-Django Unchained is a cookiecutter template for Decoupled Django projects. It is a full-stack template that includes both backend and frontend. The backend part is based on Django and the frontend is based on Nuxt or Next.js (your choice). 
-Cookiecutter handles the project creation and configuration, secrets, and environment variables. The project is ready to run with Docker Compose and pre-configured with OIDC Auth, Unfold admin theme, and custom user model. 
+Django Unchained is a cookiecutter template for Decoupled Django projects. It is a full-stack template that includes both backend and frontend. The backend part is based on Django and the frontend is based on Nuxt or Next.js (your choice).
+Cookiecutter handles the project creation and configuration, secrets, and environment variables. The project is ready to run with Docker Compose and pre-configured with OIDC Auth, Unfold admin theme, and custom user model.
 
 ### Why?
 
@@ -12,24 +13,24 @@ The main problem I encountered while decoupling Django was the authentication, w
 
 ### Current Status
 
-* [x] Cookiecutter template
-    * [x] Docker Compose
-    * [x] Postgenerate hooks
-    * [x] Frontend choice
-* [x] Django backend
-    * [x] Dockerfile
-    * [x] Custom user model with email as username (Account)
-    * [x] OIDC Provider Config
-    * [x] Unfold Admin
-    * [x] OpenAPI
-    * [x] Claims
-    * [ ] OIDC Templates
-* [ ] Next frontend
-    * [x] Dockerfile
-    * [x] Auth.js
-* [ ] Nuxt frontend
-    * [x] Dockerfile
-    * [ ] Auth.js
+- [x] Cookiecutter template
+  - [x] Docker Compose
+  - [x] Postgenerate hooks
+  - [x] Frontend choice
+- [x] Django backend
+  - [x] Dockerfile
+  - [x] Custom user model with email as username (Account)
+  - [x] OIDC Provider Config
+  - [x] Unfold Admin
+  - [x] OpenAPI
+  - [x] Claims
+  - [ ] OIDC Templates
+- [ ] Next frontend
+  - [x] Dockerfile
+  - [x] Auth.js
+- [ ] Nuxt frontend
+  - [x] Dockerfile
+  - [ ] Auth.js
 
 ### Features
 
@@ -41,9 +42,7 @@ The main problem I encountered while decoupling Django was the authentication, w
 - **OIDC Auth**: Pre-configured OIDC Auth with Django as Provider and Frontend-[Nuxt/Next] as RP (Client)
 - **Admin Theme**: Unfold admin theme with user & group management
 
-
 ![](https://github.com/user-attachments/assets/2ff0d3ff-dfdf-4dab-ad54-c9e6131e9788)
-
 
 ## Quickstart
 
@@ -53,8 +52,8 @@ To start using django-unchained, it is needed to create a cookiecutter project f
 cookiecutter https://github.com/roicort/django-unchained.git
 ```
 
-+ Set {{cookiecutter.project_slug}}
-+ Select {{cookiecutter.frontend}} [Nuxt or Next]
+- Set {{cookiecutter.project_slug}}
+- Select {{cookiecutter.frontend}} [Nuxt or Next]
 
 ### Running docker-compose
 
@@ -141,7 +140,7 @@ Contributions, issues and feature requests are welcome!
 
 ## ⭐️ Support
 
-Give a ⭐️ if you liked this project 
+Give a ⭐️ if you liked this project
 
 ## License
 

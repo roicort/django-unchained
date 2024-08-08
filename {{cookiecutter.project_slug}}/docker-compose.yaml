@@ -8,10 +8,10 @@ services:
     volumes:
       - db:/var/lib/postgresql/data
     environment:
-        PGPASSWORD: '${DB_PASSWORD:-secret}'
-        POSTGRES_DB: '${DB_DATABASE}'
-        POSTGRES_USER: '${DB_USER}'
-        POSTGRES_PASSWORD: '${DB_PASSWORD:-secret}'
+      PGPASSWORD: "${DB_PASSWORD:-secret}"
+      POSTGRES_DB: "${DB_DATABASE}"
+      POSTGRES_USER: "${DB_USER}"
+      POSTGRES_PASSWORD: "${DB_PASSWORD:-secret}"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 2s
@@ -22,7 +22,19 @@ services:
   backend:
     build:
       context: backend
-    command: [ "poetry", "run", "gunicorn", "--bind", ":8000", "main.wsgi:application", "--timeout", "0", "--workers", "4", ]
+    command:
+      [
+        "poetry",
+        "run",
+        "gunicorn",
+        "--bind",
+        ":8000",
+        "main.wsgi:application",
+        "--timeout",
+        "0",
+        "--workers",
+        "4",
+      ]
     expose:
       - "8000"
     ports:

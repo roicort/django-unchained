@@ -11,12 +11,11 @@
 </template>
 
 <script lang="ts">
-
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
   setup() {
-    const { loggedIn, user, login, logout } = useOidcAuth()
+    const { loggedIn, user, login, logout } = useOidcAuth();
 
     if (loggedIn.value) {
       console.log("User is logged in");
