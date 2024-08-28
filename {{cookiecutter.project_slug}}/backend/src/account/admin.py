@@ -1,9 +1,10 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-
-from .forms import UserChangeForm, UserCreationForm, AdminPasswordChangeForm
 from unfold.admin import ModelAdmin
+
+from .forms import AdminPasswordChangeForm, UserChangeForm, UserCreationForm
 from .models import User
+
 
 @admin.register(User)
 class UserAdmin(BaseUserAdmin, ModelAdmin):
@@ -45,7 +46,13 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
             None,
             {
                 "classes": ("wide",),
-                "fields": ("email", "first_name","last_name", "password1", "password2"),
+                "fields": (
+                    "email",
+                    "first_name",
+                    "last_name",
+                    "password1",
+                    "password2",
+                ),
             },
         ),
     )

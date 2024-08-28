@@ -126,11 +126,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_URL = '/account/login/'
+LOGIN_URL = "/account/login/"
 
-OIDC_USERINFO = 'main.settings.oidc.userinfo'
+OIDC_USERINFO = "main.settings.oidc.userinfo"
 
-#OIDC_EXTRA_SCOPE_CLAIMS = 'main.settings.oidc.CustomScopeClaims'
+# OIDC_EXTRA_SCOPE_CLAIMS = 'main.settings.oidc.CustomScopeClaims'
 
 ######################################################################
 # Internationalization
@@ -158,9 +158,7 @@ MEDIA_URL = "/media/"
 ######################################################################
 
 STORAGES = {
-    "default": {
-        "BACKEND": 'django.core.files.storage.FileSystemStorage'
-    },
+    "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },

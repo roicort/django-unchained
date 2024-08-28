@@ -9,8 +9,8 @@ package-mode = false
 [tool.poetry.dependencies]
 python = "^3.11"
 django = "^5.0"
-django-unfold="0.31.0"
-psycopg = {extras = ["binary"], version = "^3.1.16"}
+django-unfold = "0.31.0"
+psycopg = { extras = ["binary"], version = "^3.1.16" }
 djangorestframework = "^3.14.0"
 drf-spectacular = "^0.27.0"
 gdal = "3.6.2"
@@ -21,6 +21,8 @@ django-oidc-provider = "^0.8.2"
 [tool.ruff]
 fix = true
 line-length = 88
+
+[tool.ruff.lint]
 select = [
     "E",  # pycodestyle errors
     "W",  # pycodestyle warnings
@@ -31,13 +33,11 @@ select = [
     "UP", # pyupgrade
 ]
 ignore = [
-    "E501",  # line too long, handled by black
-    "B008",  # do not perform function calls in argument defaults
-    "C901",  # too complex
+    "E501", # line too long, handled by black
+    "B008", # do not perform function calls in argument defaults
+    "C901", # too complex
 ]
-exclude = [
-    "**/migrations"
-]
+exclude = ["/*/migrations/**"]
 
 [build-system]
 requires = ["poetry-core"]

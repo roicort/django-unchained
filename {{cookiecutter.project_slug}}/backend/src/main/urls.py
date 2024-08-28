@@ -1,6 +1,11 @@
 from django.contrib import admin
 from django.urls import include, path
-from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView,
+)
+
 from api import urls as api_urls
 
 urlpatterns = [
@@ -13,7 +18,7 @@ urlpatterns = [
     # Admin
     path("dashboard/", admin.site.urls),
     # OIDC
-    path('oidc/', include('oidc_provider.urls', namespace='oidc_provider')),
+    path("oidc/", include("oidc_provider.urls", namespace="oidc_provider")),
     # Accounts
     path("account/", include("account.urls")),
-    ]
+]
