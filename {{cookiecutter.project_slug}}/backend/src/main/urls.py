@@ -16,7 +16,7 @@ urlpatterns = [
     # API
     path("api/", include(api_urls)),
     # Admin
-    path("dashboard/", admin.site.urls),
+    path("djadmin/", admin.site.urls),
     # OIDC
     path("oidc/", include("oidc_provider.urls", namespace="oidc_provider")),
     # Accounts

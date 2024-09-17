@@ -1,32 +1,47 @@
 import NextAuth from "next-auth";
 import type { OIDCConfig } from "@auth/core/providers";
+import axios from "axios";
 
-export const { handlers, auth, signIn } = NextAuth({
+export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
     {
       id: "django",
       name: "Django Unchained",
       type: "oidc",
+      issuer: "http://backend:8000/oidc",
       clientId: process.env.OIDC_CLIENT_ID, // from the provider's dashboard
       clientSecret: process.env.OIDC_CLIENT_SECRET, // from the provider's dashboard
-      wellKnown: "http://backend:8000/oidc/.well-known/openid-configuration/",
-      authorization: "http://backend:8000/oidc/authorize",
-      token: "http://backend:8000/oidc/token",
-      userinfo: "http://backend:8000/oidc/userinfo",
-      jwks_endpoint: "http://backend:8000/oidc/jwks",
-      issuer: "http://backend:8000/oidc",
     } satisfies OIDCConfig,
   ],
   callbacks: {
-    jwt({ token, user, account, profile }) {
+    async jwt({ token, user, account, profile, isNewUser }) {
       if (user) {
-        // User is available during sign-in
-        token.id = user.id;
+        token.user = user;
+      }
+      if (profile) {
+        token.profile = profile;
+      }
+      if (account) {
+        token.account = account;
+        try {
+          const response = await axios.get("http://backend:8000/oidc/userinfo", {
+            headers: {
+              Authorization: `Bearer ${account.access_token}`,
+            },
+          });
+          token.profile.email = response.data.email;
+          token.profile.given_name = response.data.given_name;
+          token.profile.family_name = response.data.family_name;
+        } catch (error) {
+          console.error("Error fetching userinfo:", error);
+        }
       }
       return token;
     },
-    session({ session, token }) {
-      session.user.id = token.id;
+    async session({ session, token }) {
+      session.user = token.user;
+      session.profile = token.profile;
+      session.account = token.account;
       return session;
     },
   },
