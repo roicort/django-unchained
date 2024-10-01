@@ -24,11 +24,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       if (account) {
         token.account = account;
         try {
-          const response = await axios.get("http://backend:8000/oidc/userinfo", {
-            headers: {
-              Authorization: `Bearer ${account.access_token}`,
+          const response = await axios.get(
+            "http://backend:8000/oidc/userinfo",
+            {
+              headers: {
+                Authorization: `Bearer ${account.access_token}`,
+              },
             },
-          });
+          );
           token.profile.email = response.data.email;
           token.profile.given_name = response.data.given_name;
           token.profile.family_name = response.data.family_name;

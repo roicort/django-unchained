@@ -1,64 +1,58 @@
 import Image from "next/image";
 import SignIn from "../components/auth/signin-button";
 import { auth } from "@/auth";
-import { signOut } from "@/auth"
- 
+import { signOut } from "@/auth";
+
 function SignOut() {
   return (
     <div>
-
       <form
         action={async (formData) => {
-          "use server"
-          await signOut()
+          "use server";
+          await signOut();
         }}
       >
         <button type="submit">Sign out</button>
       </form>
     </div>
-  )
-}
-
-function SessionInfo({ data }) {
-  return (
-    data ? (
-      <div>
-        <pre className="p-4 text-left bg-gray-100 dark:bg-neutral-800/30">
-          Hello, {data.profile.given_name} {data.profile.family_name}!
-        </pre>
-        <pre className="p-4 text-left bg-gray-100 dark:bg-neutral-800/30">
-          ID: {data.user.id}
-        </pre>
-        <pre className="p-4 text-left bg-gray-100 dark:bg-neutral-800/30">
-          Email: {data.profile.email}
-        </pre>
-        <pre className="p-4 text-left bg-gray-100 dark:bg-neutral-800/30">
-          Token: {data.account.access_token}
-        </pre>   
-      </div>
-    ) : null
   );
 }
 
-function HandleSign({data}){
-  return(
+function SessionInfo({ data }) {
+  return data ? (
+    <div>
+      <pre className="p-4 text-left bg-gray-100 dark:bg-neutral-800/30">
+        Hello, {data.profile.given_name} {data.profile.family_name}!
+      </pre>
+      <pre className="p-4 text-left bg-gray-100 dark:bg-neutral-800/30">
+        ID: {data.user.id}
+      </pre>
+      <pre className="p-4 text-left bg-gray-100 dark:bg-neutral-800/30">
+        Email: {data.profile.email}
+      </pre>
+      <pre className="p-4 text-left bg-gray-100 dark:bg-neutral-800/30">
+        Token: {data.account.access_token}
+      </pre>
+    </div>
+  ) : null;
+}
 
-    data ? (
-
-      <span
+function HandleSign({ data }) {
+  return data ? (
+    <span
       className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
       rel="noopener noreferrer"
     >
       <h2 className="mb-3 text-2xl font-semibold">
-      <SignOut />
+        <SignOut />
         <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
           -&gt;
         </span>
       </h2>
       <p className="m-0 max-w-[30ch] text-sm opacity-50">End Session</p>
     </span>
-    ) : (
-      <span
+  ) : (
+    <span
       className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
       rel="noopener noreferrer"
     >
@@ -72,8 +66,7 @@ function HandleSign({data}){
         Get session information from the server.
       </p>
     </span>
-    )
-  )
+  );
 }
 
 export default async function Home() {
@@ -118,8 +111,7 @@ export default async function Home() {
       </div>
 
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-
-      <HandleSign data={session} />
+        <HandleSign data={session} />
 
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
@@ -191,7 +183,6 @@ export default async function Home() {
       </div>
 
       <SessionInfo data={session} />
-
     </main>
   );
 }
