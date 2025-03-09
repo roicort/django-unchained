@@ -4,7 +4,9 @@ Easy decoupled Django projects with OIDC Auth.
 
 ## LT;DR
 
-  cookiecutter https://github.com/roicort/django-unchained.git
+```python
+cookiecutter https://github.com/roicort/django-unchained.git
+```
 
 ### What?
 
