@@ -18,7 +18,7 @@ if [ ! -f /app/first_config ]; then
 
     poetry run python manage.py creatersakey
     poetry run python manage.py import_oidc_config
-    poetry run python manage.py createsuperuser --noinput
+    poetry run python manage.py createsuperuser --noinput --first_name admin --last_name admin
     poetry run python manage.py collectstatic --noinput
 
     # Mark first configuration as done
