@@ -18,7 +18,7 @@ services:
       timeout: 2s
       retries: 10
     networks:
-      - django-unchained
+      - django-liberty
   backend:
     build:
       context: backend
@@ -39,8 +39,8 @@ services:
       - "8000"
     ports:
       - "8000:8000"
-    #volumes:
-    #  - backend:/app
+    volumes:
+      - backend:/app
     env_file:
       - .env
     healthcheck:
@@ -52,7 +52,7 @@ services:
       db:
         condition: service_healthy
     networks:
-      - django-unchained
+      - django-liberty
   frontend:
     build:
       context: frontend-{{cookiecutter.frontend}}
@@ -74,25 +74,13 @@ services:
       backend:
         condition: service_healthy
     networks:
-      - django-unchained
-  #nginx:
-  #  image: nginx:latest
-  #  volumes:
-  #    - ./nginx.conf:/etc/nginx/nginx.conf
-  #  ports:
-  #    - "8000:8000"
-  #    - "3000:3000"
-  #  depends_on:
-  #    - frontend
-  #    - backend
-  #  networks:
-  #    - django-unchained
+      - django-liberty
 
 networks:
-  django-unchained:
+  django-liberty:
     driver: bridge
 
 volumes:
-  #backend:
+  backend:
   db:
   frontend:

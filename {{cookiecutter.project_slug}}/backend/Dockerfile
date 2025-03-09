@@ -20,4 +20,5 @@ COPY src .
 
 RUN poetry run python manage.py collectstatic --noinput
 
-CMD [ "poetry", "run", "gunicorn", "--bind", ":8000", "main.wsgi:application" ]
+ENTRYPOINT ["bash","entrypoint.sh"]
+CMD ["poetry", "run", "gunicorn","--bind", ":8000", "main.wsgi:application"]
