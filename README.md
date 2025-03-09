@@ -1,6 +1,10 @@
 # Django Unchained ⛓️‍💥
 
-Easy decoupled Django projects with OIDC Auth. ⚠️⚠️ Currently under development ⚠️⚠️
+Easy decoupled Django projects with OIDC Auth.
+
+## LT;DR
+
+  cookiecutter https://github.com/roicort/django-unchained.git
 
 ### What?
 
