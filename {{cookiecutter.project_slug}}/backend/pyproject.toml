@@ -17,6 +17,8 @@ gdal = "3.6.2"
 gunicorn = "^22.0.0"
 whitenoise = "^5.3.0"
 django-oidc-provider = "^0.8.2"
+django-ninja = "^0.17.0"
+django-cors-headers = "^4.0.0"
 
 [tool.ruff]
 fix = true
