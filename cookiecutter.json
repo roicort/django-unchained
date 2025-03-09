@@ -1,7 +1,7 @@
 {
-  "project_slug": "django-unchained",
+  "project_slug": "django-liberty",
   "project_name": "{{cookiecutter.project_slug}}",
-  "frontend": ["next", "nuxt"],
+  "frontend": ["next"],
   "_copy_without_render": [
     "frontend-nuxt/*",
     "frontend-next/*",
