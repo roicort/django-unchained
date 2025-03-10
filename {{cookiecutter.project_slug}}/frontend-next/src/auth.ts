@@ -2,13 +2,26 @@ import NextAuth from "next-auth";
 import type { OIDCConfig } from "@auth/core/providers";
 import axios from "axios";
 
+// Get the OIDC configuration from the well-known endpoint
+
+export const getOIDCConfig = async () => {
+  try {
+    const response = await axios.get(process.env.WELL_KNOWN_OIDC);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching OIDC configuration:", error);
+  }
+};
+
+const oidcConfig = await getOIDCConfig();
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
     {
       id: "django",
       name: "Django Unchained",
       type: "oidc",
-      issuer: process.env.WELL_KNOWN_OIDC['issuer'], 
+      issuer: oidcConfig.issuer, 
       clientId: process.env.OIDC_CLIENT_ID, // from the provider's dashboard
       clientSecret: process.env.OIDC_CLIENT_SECRET, // from the provider's dashboard
     } satisfies OIDCConfig,
@@ -25,7 +38,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         token.account = account;
         try {
           const response = await axios.get(
-            process.env.WELL_KNOWN_OIDC["userinfo_endpoint"],
+            oidcConfig.userinfo_endpoint,
             {
               headers: {
                 Authorization: `Bearer ${account.access_token}`,
