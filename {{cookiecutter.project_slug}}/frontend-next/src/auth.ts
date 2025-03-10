@@ -5,8 +5,8 @@ import axios from "axios";
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
     {
-      id: "{{cookiecutter.project_name}}",
-      name: "{{cookiecutter.project_name}}",
+      id: "django",
+      name: "Django Liberty",
       type: "oidc",
       issuer: process.env.OIDC_ISSUER,
       clientId: process.env.OIDC_CLIENT_ID, // from the provider's dashboard
