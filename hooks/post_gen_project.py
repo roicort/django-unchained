@@ -85,3 +85,6 @@ with open(".env.frontend", "w") as f:
 
 if dir_to_remove and os.path.exists(dir_to_remove):
     shutil.rmtree(dir_to_remove)
+
+if os.path.exists("django-liberty"):
+    shutil.rmtree("django-liberty")

@@ -5,6 +5,7 @@
   "_copy_without_render": [
     "frontend-nuxt/*",
     "frontend-next/*",
+    "django-liberty/*",
     "backend/*.html"
   ]
 }
