@@ -21,7 +21,6 @@ class Command(BaseCommand):
                 # Crea el cliente
                 c = Client(
                     name="{{cookiecutter.project_name}}",
-                    owner="{{cookiecutter.project_name}}",
                     client_id=os.environ.get("OIDC_CLIENT_ID"),
                     client_secret=os.environ.get("OIDC_CLIENT_SECRET"),
                     redirect_uris=[os.environ.get("REDIRECT_URI")],
