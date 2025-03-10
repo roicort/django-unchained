@@ -47,7 +47,8 @@ if frontend == "next":
         "OIDC_CLIENT_ID": oidc_client_id,
         "OIDC_CLIENT_SECRET": oidc_client_secret,
         "OIDC_ISSUER": "http://backend:8000/oidc",
-        "OIDC_WELL_KNOWN": "http://backend:8000/oidc/.well-known/openid-configuration/?name=provider-info"
+        "OIDC_WELL_KNOWN": "http://backend:8000/oidc/.well-known/openid-configuration/?name=provider-info",
+        "NEXTAUTH_URL": "http://frontend:3000"
     }
     dir_to_remove = "frontend-nuxt"
     redirect_uri = "http://frontend:3000/api/auth/callback/django"
