@@ -34,7 +34,7 @@ if frontend == "nuxt":
         "OIDC_CLIENT_ID": oidc_client_id,
         "OIDC_CLIENT_SECRET": oidc_client_secret,
         "OIDC_ISSUER": "http://backend:8000/oidc",
-        "OIDC_WELL_KNOWN": "http://backend:8000/oidc/.well-known/openid-configuration/?name=provider-info"
+        "OIDC_WELL_KNOWN": "http://backend:8000/oidc/.well-known/openid-configuration"
     }
     dir_to_remove = "frontend-next"
     redirect_uri = "http://frontend:3000/auth/oidc/callback"
