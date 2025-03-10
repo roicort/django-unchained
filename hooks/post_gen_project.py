@@ -33,7 +33,7 @@ if frontend == "nuxt":
         ),  # 48_characters_random_string
         "OIDC_CLIENT_ID": oidc_client_id,
         "OIDC_CLIENT_SECRET": oidc_client_secret,
-        "OIDC_ISSUER": "http://backend:8000/oidc/",
+        "OIDC_ISSUER": "http://backend:8000/oidc",
         "OIDC_WELL_KNOWN": "http://backend:8000/oidc/.well-known/openid-configuration/?name=provider-info"
     }
     dir_to_remove = "frontend-next"
@@ -46,7 +46,7 @@ if frontend == "next":
         "AUTH_SECRET": secrets.token_urlsafe(32),
         "OIDC_CLIENT_ID": oidc_client_id,
         "OIDC_CLIENT_SECRET": oidc_client_secret,
-        "OIDC_ISSUER": "http://backend:8000/oidc/",
+        "OIDC_ISSUER": "http://backend:8000/oidc",
         "OIDC_WELL_KNOWN": "http://backend:8000/oidc/.well-known/openid-configuration/?name=provider-info"
     }
     dir_to_remove = "frontend-nuxt"
