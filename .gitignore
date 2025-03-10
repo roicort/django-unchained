@@ -23,3 +23,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .ruff_cache
+django-liberty/.env
+django-liberty/.env.frontend
