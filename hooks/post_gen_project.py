@@ -20,7 +20,7 @@ oidc_client_secret = secrets.token_hex(32)
 if frontend == "nuxt":
     print("Generating .env files for Nuxt")
     env_front_variables = {
-        "API_URL": "http://api:8000",
+        "API_URL": "http://localhost:8000",
         "NUXT_API_SECRET": secrets.token_urlsafe(32),
         "NUXT_OIDC_TOKEN_KEY": base64.b64encode(secrets.token_bytes(32)).decode(
             "utf-8"
@@ -33,6 +33,7 @@ if frontend == "nuxt":
         ),  # 48_characters_random_string
         "OIDC_CLIENT_ID": oidc_client_id,
         "OIDC_CLIENT_SECRET": oidc_client_secret,
+        "WELL_KNOWN_OIDC": "http://localhost:8000/oidc/.well-known/openid-configuration/?name=provider-info"
     }
     dir_to_remove = "frontend-next"
     redirect_uri = "http://localhost:3000/auth/oidc/callback"
@@ -40,7 +41,7 @@ if frontend == "nuxt":
 if frontend == "next":
     print("Generating .env files for Next")
     env_front_variables = {
-        "API_URL": "http://api:8000",
+        "API_URL": "http://localhost:8000",
         "AUTH_SECRET": secrets.token_urlsafe(32),
         "OIDC_CLIENT_ID": oidc_client_id,
         "OIDC_CLIENT_SECRET": oidc_client_secret,

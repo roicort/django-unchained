@@ -8,7 +8,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       id: "django",
       name: "Django Unchained",
       type: "oidc",
-      issuer: "http://backend:8000/oidc",
+      issuer: process.env.WELL_KNOWN_OIDC['issuer'], 
       clientId: process.env.OIDC_CLIENT_ID, // from the provider's dashboard
       clientSecret: process.env.OIDC_CLIENT_SECRET, // from the provider's dashboard
     } satisfies OIDCConfig,
@@ -25,7 +25,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         token.account = account;
         try {
           const response = await axios.get(
-            "http://backend:8000/oidc/userinfo",
+            process.env.WELL_KNOWN_OIDC["userinfo_endpoint"],
             {
               headers: {
                 Authorization: `Bearer ${account.access_token}`,
